@@ -1,0 +1,31 @@
+{% extends "index.html"%}
+{%block content%}
+<br><br><br>
+  <head>
+    <title>imagetotext</title>
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="center">
+    <h1>Image To Text</h1><br>
+    
+        
+        
+            <form action="{{ url_for('convert') }}" method="POST" enctype="multipart/form-data">
+                <label for="image-upload" class="upload-label">Choose an image:</label>
+                <input type="file" name="image-upload" id="image-upload" >
+                <input type="submit" value="Convert" class="upload-submit">
+                
+            </form><br><br>
+            <textarea  rows="15" cols="80" class="style1">{{text}}
+            </textarea>
+     
+          
+          
+      </form>
+    </div>
+    {%endblock%}
+  </body>
+
+
+ 

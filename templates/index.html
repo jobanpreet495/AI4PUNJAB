@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AI4PUNJABI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+
+  </head>
+  <body>
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">AI4PUNJABI</label>
+      <ul>
+        <li><a class="active" href="/">HOME</a></li>
+        <li><a href="/transliteration">TRANSLITERATE</a></li>
+        <li><a href="/phonetic">PHONETIC DICTIONARY</a></li>
+        <li><a href="/typepad">TYPE PAD</a></li>
+        <li><a href="/ocr">IMAGE TO TEXT</a></li>
+ 
+        
+      </ul>
+    </nav>
+{% block content%}
+{%endblock%}
+  </body>
+</html>

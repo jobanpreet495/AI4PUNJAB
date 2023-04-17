@@ -1,0 +1,47 @@
+{% extends "index.html"%}
+{%block content%}
+
+<br><br>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+  <body>
+    <div class="center">
+    <h1>Phonetic Dictionary For Punjabi</h1>
+
+  <form action="/phoneme"  method="post" >
+    <textarea  name="any_text" rows="4" cols="50" class="style1" required>
+    </textarea><br><br><br>
+  <input type="submit" name="Submit" class="button1"><br></div><br><br></form>
+<div style="width: 500px; margin: auto;">
+  <table>
+    <tr>
+        <th>Word</th>
+        <th>Punjabi Phonemes</th>
+        <th>English</th>
+        <th>IPA</th>
+        <th>Sound</th>
+    </tr>
+
+    {% for item in res %}
+    <tr>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+        <td>{{ l[loop.index0] }}</td>
+        <td>{{ ipa_new[loop.index0][1] }}</td>
+      <td>
+        <form action="/play" method="post">
+          <input type="hidden" name="phoneme_list" value="{{ phoneme_lists[loop.index0] | join(',') }}">
+          <button class="play" type="submit" name="submit_button" value="{{ loop.index }}">Play</button>
+        </form>
+      </td>
+   </tr>{% endfor %}
+  
+</table>
+</form></div>
+{%endblock%}
+
+</body>
+
